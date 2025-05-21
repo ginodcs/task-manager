@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.env
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# Docker
+.dockerignore
+*.pid
+
+# Devcontainer
+.devcontainer/*.log
+*.log
+
+# Node/React (cuando agregues frontend)
+node_modules/
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db

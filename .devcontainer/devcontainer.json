@@ -1,0 +1,23 @@
+{
+  "name": "FastAPI Dev Container",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "backend",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker",
+        "esbenp.prettier-vscode",
+        "formulahendry.code-runner",
+        "rangav.vscode-thunder-client"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install -r requirements.txt"
+}
