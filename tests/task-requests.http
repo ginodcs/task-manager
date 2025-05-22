@@ -1,0 +1,31 @@
+@baseUrl = http://localhost:8000
+
+### POST a task
+# @name createTask
+@taskId = {{createTask.response.body.$.id}}
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+   "title": "Testing POST",
+    "description": "Test from Rest Client" 
+}
+
+### GET all tasks
+GET {{baseUrl}}/tasks
+
+### GET a task by id
+
+GET {{baseUrl}}/tasks/{{taskId}}
+
+### PUT a task
+PUT {{baseUrl}}/tasks/{{taskId}}
+Content-Type: application/json
+
+{
+  "status": "In progress",
+  "hours_spent": 5
+}
+
+### DELETE a task
+DELETE {{baseUrl}}/tasks/{{taskId}}

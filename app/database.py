@@ -15,5 +15,5 @@ def get_db():
         db.close()
 
 def create_tables():
-    from app.models import Task
+    from app.models.task_model import Task
     Base.metadata.create_all(bind=engine)
