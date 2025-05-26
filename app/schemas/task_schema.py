@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from app.models.task_model import StatusEnum
 
 class TaskBase(BaseModel):
+    project_id: int
     title: str
     description: str | None = None
 
@@ -26,3 +27,4 @@ class TaskUpdate(BaseModel):
     created_at: datetime | None = None
     completed_at: datetime | None = None
     hours_spent: int | None = None
+    project_id: int | None = None

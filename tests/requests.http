@@ -1,0 +1,100 @@
+@baseUrl = http://localhost:8000
+
+####################################################
+### 🏭 CLIENTS
+####################################################
+
+### POST a client
+# @name createClient
+@clientId = {{createClient.response.body.$.id}}
+POST {{baseUrl}}/clients
+Content-Type: application/json
+
+{
+    "name": "Client A",
+    "logoUrl": "https://img.logo.dev/viseo.com?token=pk_EdFYjU82Thyu_jdE4MkkMA" 
+}
+
+### GET all clients
+GET {{baseUrl}}/clients
+
+### GET a client by id
+GET {{baseUrl}}/clients/{{clientId}}
+
+### PUT a client
+PUT {{baseUrl}}/clients/{{clientId}}
+Content-Type: application/json
+
+{
+  "name": "Client A Updated"
+}
+
+### DELETE a client
+DELETE {{baseUrl}}/clients/{{clientId}}
+
+####################################################
+### 💼 PROJECTS
+####################################################
+
+### POST a project
+# @name createProject
+@projectId = {{createProject.response.body.$.id}}
+POST {{baseUrl}}/projects
+Content-Type: application/json
+
+{
+  "name": "Project Alpha",
+  "client_id": "{{clientId}}"
+}
+
+### GET all projects
+GET {{baseUrl}}/projects
+
+### GET a project by id
+GET {{baseUrl}}/projects/{{projectId}}
+
+### PUT a project
+PUT {{baseUrl}}/projects/{{projectId}}
+Content-Type: application/json
+
+{
+  "name": "Project Alpha Updated"
+}
+
+### DELETE a project
+DELETE {{baseUrl}}/projects/{{projectId}}
+
+####################################################
+### 📒 TASKS
+####################################################
+
+### POST a task
+# @name createTask
+@taskId = {{createTask.response.body.$.id}}
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+   "title": "Testing POST",
+    "description": "Test from Rest Client",
+    "project_id": "{{projectId}}"
+}
+
+### GET all tasks
+GET {{baseUrl}}/tasks
+
+### GET a task by id
+
+GET {{baseUrl}}/tasks/{{taskId}}
+
+### PUT a task
+PUT {{baseUrl}}/tasks/{{taskId}}
+Content-Type: application/json
+
+{
+  "status": "In progress",
+  "hours_spent": 5
+}
+
+### DELETE a task
+DELETE {{baseUrl}}/tasks/{{taskId}}
