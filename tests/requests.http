@@ -93,7 +93,7 @@ Content-Type: application/json
 
 {
   "status": "In progress",
-  "hours_spent": 5
+  "hours_spent": 7
 }
 
 ### DELETE a task
